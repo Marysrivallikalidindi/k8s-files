@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: en-pod
+  labels:
+    app: extpod
+spec:
+  containers:
+    - name: conten
+      image: nginx:1.29
+      ports:
+        - containerPort: 80
+          protocol: TCP

@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-en
+spec:
+  type: ExternalName
+  externalName: www.google.com
+  selector:
+    app: extpod
