@@ -9,5 +9,5 @@ spec:
     - name: testco-jenkins
       image: jenkins/jenkins:lts
       ports:
-        - containerPort: 80
+        - containerPort: 8080
           protocol: TCP
