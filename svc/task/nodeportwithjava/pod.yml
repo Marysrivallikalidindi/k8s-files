@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: svc-pod2
+  labels:
+    app: test-1
+spec:
+  containers:
+    - name: testco-2
+      image: mary511/javaproimage:javadevenv
+      ports:
+        - containerPort: 8080
+          protocol: TCP
