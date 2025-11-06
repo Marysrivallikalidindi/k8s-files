@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: namespace-pod
+  labels:
+    app: ns-test
+    namespace: prod
+spec:
+  - containers:
+     name: my-con1
+     image: nginx:latest
+     port:
+     - containerPort: 80
