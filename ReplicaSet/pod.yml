@@ -1,0 +1,24 @@
+apiVersion : v1
+kind : Pod
+metadata:
+  name: mydummy-replicas
+  labels:
+    app: test-env
+  namespace: prod
+spec:
+  minReadySeconds: 5
+  replicas: 5
+  selector:
+    matchLabels:
+      app: dev
+  template:
+    metadata:
+      name: my-pod
+      labels:
+        app: dev
+    spec:
+      containers:
+      -  name: myreplica-con
+         image: nginx:1.29
+         ports:
+           -containerPort: 80
