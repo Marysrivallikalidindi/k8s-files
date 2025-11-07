@@ -4,7 +4,7 @@ metadata:
   name: mydummy-replicas
   labels:
     app: test-env
-  namespace: prod
+  namespace: dev
 spec:
   minReadySeconds: 5
   replicas: 5
