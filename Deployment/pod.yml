@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind : Deployment
+metadata:
+  name: javaapp
+  namespace: dev
+  labels:
+     app: javaapp
+spec:
+  minReadySeconds: 5
+  replicas: 5
+  selector:
+    matchLabels:
+      app: javpods
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      labels:
+        app: javapods
+    spec:
+      containers:
+        - name : myjava-container
+          image: 
+          ports:
+            -ContainerPort: 8080
+          livenessProbe:
+            tcpSocket:
+              port: 80
+      resources:
+        requests:
+          cpu : 125m
+          memory: 64Mi
+        limits:
+          cpu: 250m
+          memory: 128Mi
+      restartPolicy: OnFailure
+          
