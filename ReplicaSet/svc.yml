@@ -9,4 +9,4 @@ spec:
     app: dev
   ports:
     - port: 80
-      NodePort: 31345
+      nodePort: 31345
