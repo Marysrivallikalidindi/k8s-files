@@ -1,0 +1,13 @@
+apiVersion: v1
+kind : Pod
+metadata:
+  name: myhelm-pod
+  labels:
+    app: dev
+  namespace: prod
+spec:
+  containers:
+    - name: myhelmcon
+      image: {{ .Values.spec.containers.image}}
+      ports:
+       - containerPort: {{ .Values.containerPort}}

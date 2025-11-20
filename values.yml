@@ -1,0 +1,4 @@
+spec:
+  containers:
+    image: nginx
+containerPort: 80
