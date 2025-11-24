@@ -25,16 +25,17 @@ spec:
         - name: my-container1
           image: longflew/ingress:YELLOWPAGE
           volumeMounts:
-            - name: Myconfig
-              mountpath: /usr/share/nginx/html
+            - name: myconfig
+              mountPath: /usr/share/nginx/html
           ports:
             containerPort: 80
       volumes:
         - name: myconfig
           configMap:
             name: mydp-config
+        - name: mysecret
           secret:
-           SecretName: mydp-sc
+            secretName: mydp-sc
 
 
   
